@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head><title>home</title>
+  <style>
+
+  </style>
+  <script type="text/javascript" lang="javascript">
+    function clickme() {
+      let ctrl = document.getElementById("txt").innerText;
+      if (ctrl === "Hello.") {
+        ctrl = "Goodbye.";
+      }else {
+        ctrl = "Hello.";
+      }
+    }
+  </script>
+</head>
+<body>
+  <ul>
+    <li>My name is <span style="color: #d13838;"">Parker</span>.</li>
+    <li>My favorite color is <span style="color: darkviolet;"">PURPLE</span>.</li>
+    <li>My favorite animal is poopies.</li>
+    <li>I like serving the Lord...</li>
+  </ul>
+  <div>
+    <button onclick="clickme();" type="button" name="button">Click me!</button>
+    <span id="txt"></span>
+  </div>
+</body>
+</html>

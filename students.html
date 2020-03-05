@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Students</title>
+	<script lang="javascript">
+		let students = [];
+		function add() {
+			let json = {
+				Name: document.getElementById("pname").value,
+				Number: document.getElementById("pnbr").value,
+				Color: document.getElementById("pcolor").value,
+				Subject: document.getElementById("psubj").value,
+			}
+			students.push(json)
+			//console.log(json)
+			display()
+		}
+		function display() {
+			let table = document.getElementById("tbody")
+			table.innerHTML = ""
+			students.forEach(student => {
+				let tr = "<tr>"
+				tr += "<td>" + student.Name + "</td>"
+				tr += "<td>" + student.Number + "</td>"
+				tr += "<td>" + student.Color + "</td>"
+				tr += "<td>" + student.Subject + "</td>"
+				tr += "</tr>"
+				table.innerHTML += tr
+			});
+		}
+	</script>
+</head>
+
+<body>
+	<h1>Add Students</h1>
+	<p>First name</p><input type="text" id="pname">
+	<p>Favorite number</p><input type="text" id="pnbr" name="Favorite number">
+	<p>Favorite color</p><input type="text" id="pcolor" name="Favorite color">
+	<p>Favorite subject</p><input type="text" id="psubj" name="Favorite subject">
+	<br><br>
+	<button onclick="add()">Add</button>
+	<br><br><br>
+	<table style="width:60%;border:1px solid silver;">
+		<thead>
+			<tr>
+				<td>Name</td>
+				<td>Favorite Number</td>
+				<td>Favorite Color</td>
+				<td>Favorite Subject</td>
+			</tr>
+		</thead>
+		<tbody id="tbody">
+
+		</tbody>
+	</table>
+</body>
+
+</html>
